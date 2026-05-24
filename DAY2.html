@@ -8,177 +8,176 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-/* ===============================
-   ベース
-=============================== */
-html, body {
-    background: #0f172a;
-    color: #fff;
-    font-family: 'Urbanist', 'Noto Sans JP', sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: auto;
-    overflow-x: hidden;
-}
+    /* ===============================
+       ベース
+    =============================== */
+    html, body {
+        background: #0f172a;
+        color: #fff;
+        font-family: 'Urbanist', 'Noto Sans JP', sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        overflow-x: hidden;
+    }
 
-/* コンテナ */
-.container {
-    width: 100%;
-    max-width: 460px;
-    margin: 0 auto;
-    padding: 20px 12px 100px;
-    box-sizing: border-box;
-}
+    .container {
+        width: 100%;
+        max-width: 460px;
+        margin: 0 auto;
+        padding: 20px 12px 100px;
+        box-sizing: border-box;
+    }
 
-/* ===============================
-   ヘッダー
-=============================== */
-.header { text-align: center; margin-bottom: 25px; }
-.header h1 { font-size: 26px; color: #38bdf8; margin: 0; font-weight: bold; }
-.header p { color: #94a3b8; font-size: 15px; margin-top: 6px; }
+    /* ===============================
+       ヘッダー
+    =============================== */
+    .header { text-align: center; margin-bottom: 25px; }
+    .header h1 { font-size: 26px; color: #38bdf8; margin: 0; font-weight: bold; }
+    .header p { color: #94a3b8; font-size: 15px; margin-top: 6px; }
 
-/* ===============================
-   スケジュールカード
-=============================== */
-.schedule-card {
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-left: 5px solid #38bdf8;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
+    /* ===============================
+       スケジュールカード
+    =============================== */
+    .schedule-card {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-left: 5px solid #38bdf8;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-.schedule-card.orange { border-left-color: #38bdf8; }
-.schedule-card.lunch  { border-left-color: #34d399; }
-.schedule-card.gas    { border-left-color: #ef4444; }
+    .schedule-card.orange { border-left-color: #38bdf8; }
+    .schedule-card.lunch  { border-left-color: #34d399; }
+    .schedule-card.gas    { border-left-color: #ef4444; }
 
-.time {
-    font-size: 18px;
-    font-weight: bold;
-    color: #38bdf8;
-    margin-bottom: 5px;
-    display: block;
-}
-.lunch  .time { color: #34d399; }
-.gas    .time { color: #ef4444; }
+    .time {
+        font-size: 18px;
+        font-weight: bold;
+        color: #38bdf8;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .lunch  .time { color: #34d399; }
+    .gas    .time { color: #ef4444; }
 
-.schedule-card h2 {
-    margin: 0 0 8px;
-    font-size: 17px;
-    color: #f8fafc;
-    font-weight: bold;
-}
-.schedule-card p {
-    margin: 0 0 10px;
-    color: #cbd5e1;
-    font-size: 13px;
-    line-height: 1.5;
-}
+    .schedule-card h2 {
+        margin: 0 0 8px;
+        font-size: 17px;
+        color: #f8fafc;
+        font-weight: bold;
+    }
+    .schedule-card p {
+        margin: 0 0 10px;
+        color: #cbd5e1;
+        font-size: 13px;
+        line-height: 1.5;
+    }
 
-/* ===============================
-   移動ナビ
-=============================== */
-.nav-info { 
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    color: #38bdf8;
-    margin-bottom: 15px;
-    display: block;
-}
+    /* ===============================
+       移動ナビ
+    =============================== */
+    .nav-info { 
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        color: #38bdf8;
+        margin-bottom: 15px;
+        display: block;
+    }
 
-/* ===============================
-   バッジ
-=============================== */
-.badge-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 6px;
-}
-.badge {
-    display: inline-block;
-    background: rgba(56, 189, 248, 0.2);
-    color: #38bdf8;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: bold;
-}
-.lunch  .badge { background: rgba(52, 211, 153, 0.2); color: #34d399; }
-.gas    .badge { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+    /* ===============================
+       バッジ
+    =============================== */
+    .badge-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+    .badge {
+        display: inline-block;
+        background: rgba(56, 189, 248, 0.2);
+        color: #38bdf8;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .lunch  .badge { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+    .gas    .badge { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
 
-/* ===============================
-   マップボタン
-=============================== */
-.map-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background: #38bdf8;
-    color: #000;
-    padding: 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
-    margin-top: 5px;
-}
+    /* ===============================
+       マップボタン
+    =============================== */
+    .map-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        background: #38bdf8;
+        color: #000;
+        padding: 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 13px;
+        margin-top: 5px;
+    }
 
-/* ===============================
-   グルメセクション
-=============================== */
-.gourmet-section {
-    margin-top: 15px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 15px;
-}
-.gourmet-title {
-    font-size: 14px;
-    color: #34d399;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.gourmet-shop {
-    background: rgba(0,0,0,0.2);
-    border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-left: 3px solid #34d399;
-}
-.shop-name {
-    font-weight: bold;
-    color: #fff;
-    font-size: 13px;
-    margin-bottom: 4px;
-}
-.shop-desc {
-    font-size: 11px;
-    color: #cbd5e1;
-    margin: 0 0 8px;
-    line-height: 1.4;
-}
-.shop-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: #34d399;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
-    border: 1px solid rgba(52, 211, 153, 0.3);
-    padding: 3px 8px;
-    border-radius: 4px;
-}
+    /* ===============================
+       グルメセクション
+    =============================== */
+    .gourmet-section {
+        margin-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 15px;
+    }
+    .gourmet-title {
+        font-size: 14px;
+        color: #34d399;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .gourmet-shop {
+        background: rgba(0,0,0,0.2);
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-left: 3px solid #34d399;
+    }
+    .shop-name {
+        font-weight: bold;
+        color: #fff;
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+    .shop-desc {
+        font-size: 11px;
+        color: #cbd5e1;
+        margin: 0 0 8px;
+        line-height: 1.4;
+    }
+    .shop-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: #34d399;
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: bold;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        padding: 3px 8px;
+        border-radius: 4px;
+    }
     </style>
 </head>
 
@@ -209,7 +208,7 @@ html, body {
         <h2>能登金剛 厳門</h2>
         <p>能登金剛を代表するダイナミックな景観を歩いて散策します。</p>
 
-        <a href="https://www.google.com/maps/place/%E5%B7%8C%E9%96%80%E7%84%A1%E6%96%99%E9%A7%90%E8%BB%8A%E5%A0%B4/@37.095043,136.7257128,17z"
+        <a href="https://www.google.com/maps/place/%E5%B7%8C%E9%96%80%E7%84%A1%E6%96%99%E9%A7%90%E8%BB%8A%E5%A0%B4/@37.095043,136.7257128,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff73761cd90f57b:0x3bde326e708f11ce!8m2!3d37.0950387!4d136.7282877!16s%2Fg%2F11t3_mb8xg"
            class="map-btn" target="_blank">
             <i class="fa-solid fa-map-pin"></i> 厳門マップ
         </a>
@@ -227,7 +226,7 @@ html, body {
         <h2>道の駅 とぎ海街道</h2>
         <p>「世界一長いベンチ」を見学。ここで最初の10分休憩を兼ねるのがおすすめ。</p>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=道の駅+とぎ海街道"
+        <a href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85+%E3%81%A8%E3%81%8E%E6%B5%B7%E8%A1%97%E9%81%93"
            class="map-btn" target="_blank">
             <i class="fa-solid fa-square-p"></i> バイク駐輪場マップ
         </a>
@@ -245,7 +244,7 @@ html, body {
         <h2>ヤセの断崖</h2>
         <p>スリル満点の絶壁を見学。</p>
 
-        <a href="https://www.google.com/maps/place/%E3%83%A4%E3%82%BB%E3%81%AE%E6%96%AD%E5%B4%96+%E9%A7%90%E8%BB%8A%E5%A0%B4/@37.2095445,136.6831187,17z"
+        <a href="https://www.google.com/maps/place/%E3%83%A4%E3%82%BB%E3%81%AE%E6%96%AD%E5%B4%96+%E9%A7%90%E8%BB%8A%E5%A0%B4/@37.2095445,136.6831187,17z/data=!4m14!1m7!3m6!1s0x5ff0cd475c6a689b:0x4d316a69b738a57c!2z44Ok44K744Gu5pat5bSW!8m2!3d37.2095445!4d136.6831187!16s%2Fg%2F11_pl34_r!3m5!1s0x5ff0cd477b60d19f:0x9a9ef7eff2e1103f!8m2!3d37.209144!4d136.6843689!16s%2Fg%2F11cs69821s"
            class="map-btn" target="_blank">
             <i class="fa-solid fa-map-pin"></i> 断崖スポットマップ
         </a>
@@ -273,7 +272,7 @@ html, body {
                 <div class="shop-name">① やぶ新橋店</div>
                 <p class="shop-desc">海鮮丼・蕎麦が人気の老舗。朝市通りで安定の味。</p>
                 <a href="https://tabelog.com/ishikawa/A1704/A170401/17001396/" class="shop-link" target="_blank">食べログ</a>
-                <a href="https://www.google.com/maps/place/%E3%81%8A%E9%A3%9F%E4%BA%8B%E5%87%A6+%E3%82%84%E3%81%B6%E6%96%B0%E6%A9%8B%E5%BA%97/@37.3929161,136.8973459,17z"
+                <a href="https://www.google.com/maps/place/%E3%81%8A%E9%A3%9F%E4%BA%8B%E5%87%A6+%E3%82%84%E3%81%B6%E6%96%B0%E6%A9%8B%E5%BA%97/@37.3929161,136.8973459,17.75z/data=!4m6!3m5!1s0x5ff12e44eb23ae6b:0x2f25092d2ad16670!8m2!3d37.3937243!4d136.9012046!16s%2Fg%2F1tgm2ptq"
                    class="shop-link" target="_blank">Googleマップ</a>
             </div>
 
@@ -282,7 +281,7 @@ html, body {
                 <div class="shop-name">② 鵠州agri膳座</div>
                 <p class="shop-desc">地元食材を使った創作和食。落ち着いた雰囲気で人気。</p>
                 <a href="https://tabelog.com/ishikawa/A1704/A170401/17015039/" class="shop-link" target="_blank">食べログ</a>
-                <a href="https://www.google.com/maps/place/%E9%B5%A0%E5%B7%9Eagri%E8%86%B3%E5%BA%A7/@37.3988565,136.9302577,17z"
+                <a href="https://www.google.com/maps/place/%E9%B5%A0%E5%B7%9Eagri%E8%86%B3%E5%BA%A7/@37.3988565,136.9302577,16z/data=!4m6!3m5!1s0x5ff12f00475b378d:0xeb1ab19ff35f2948!8m2!3d37.3988565!4d136.9397849!16s%2Fg%2F11wv3wf0rg"
                    class="shop-link" target="_blank">Googleマップ</a>
             </div>
 
@@ -291,7 +290,7 @@ html, body {
                 <div class="shop-name">③ わじもん</div>
                 <p class="shop-desc">海鮮丼・定食が人気。地元民にも愛される名店。</p>
                 <a href="https://tabelog.com/ishikawa/A1704/A170401/17011039/" class="shop-link" target="_blank">食べログ</a>
-                <a href="https://www.google.com/maps/place/%E3%82%8F%E3%81%98%E3%82%82%E3%82%93/@37.3957562,136.9066727,17z"
+                <a href="https://www.google.com/maps/place/%E3%82%8F%E3%81%98%E3%82%82%E3%82%93/@37.3957562,136.9066727,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff12e43f13ea85d:0x44c2a2ffb33e04!8m2!3d37.395752!4d136.9092476!16s%2Fg%2F11f4pn0rkm"
                    class="shop-link" target="_blank">Googleマップ</a>
             </div>
         </div>
@@ -309,7 +308,7 @@ html, body {
         <h2>道の駅 千枚田ポケットパーク</h2>
         <p>美しい「白米千枚田」を観光。名物「棚田米おにぎり」も絶品です。</p>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=道の駅+千枚田ポケットパーク"
+        <a href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85+%E5%8D%83%E6%9E%9A%E7%94%B0%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF"
            class="map-btn" target="_blank">
             <i class="fa-solid fa-map-pin"></i> 白米千枚田マップ
         </a>
@@ -327,7 +326,7 @@ html, body {
         <h2>道の駅 狼煙（禄剛埼灯台）</h2>
         <p>能登半島の最先端！灯台からは見渡す限りの日本海が一望できます。</p>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=道の駅+狼煙"
+        <a href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85+%E7%8B%BC%E7%85%99"
            class="map-btn" target="_blank">
             <i class="fa-solid fa-location-arrow"></i> 禄剛埼灯台マップ
         </a>
@@ -345,7 +344,7 @@ html, body {
         <h2>見附島（軍艦島）</h2>
         <p>軍艦のような形をした迫力ある奇岩を観光。</p>
 
-        <a href="https://www.google.com/maps/place/%E8%A6%8B%E9%99%84%E5%85%AC%E5%9C%92%E9%A7%90%E8%BB%8A%E5%A0%B4/@37.3965254,137.2437661,17z"
+        <a href="https://www.google.com/maps/place/%E8%A6%8B%E9%99%84%E5%85%AC%E5%9C%92%E9%A7%90%E8%BB%8A%E5%A0%B4/@37.3965254,137.2437661,17.33z/data=!4m9!1m2!2m1!1z6KaL6ZmE5bO2!3m5!1s0x5ff6ca740489998d:0x48b3492c8472404c!8m2!3d37.3976639!4d137.2434499!16s%2Fg%2F11cs6ktpsm"
            class="map-btn" target="_blank">
             <i class="fa-solid fa-map-pin"></i> 見附島マップ
         </a>
@@ -361,3 +360,95 @@ html, body {
         <span class="time">16:40 - 16:50</span>
         <div class="badge-container"><span class="badge">通過＆撮影スポット</span></div>
         <h2>ツインブリッジのと</h2>
+        <p>能登島へ渡る美しい橋。走行しながら景色を楽しみ、途中で写真タイムもおすすめ。</p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=%E3%83%84%E3%82%A4%E3%83%B3%E3%83%96%E3%83%AA%E3%83%83%E3%82%B8%E3%81%AE%E3%81%A8"
+           class="map-btn" target="_blank">
+            <i class="fa-solid fa-bridge-water"></i> ツインブリッジのとマップ
+        </a>
+    </div>
+
+    <div class="nav-info">
+        <i class="fa-solid fa-road"></i> 12km /
+        <i class="fa-solid fa-clock"></i> 20分
+    </div>
+
+    <!-- 17:10 能登島大橋 -->
+    <div class="schedule-card">
+        <span class="time">17:10 - 17:20</span>
+        <div class="badge-container"><span class="badge">通過ポイント</span></div>
+        <h2>能登島大橋</h2>
+        <p>能登島から本土側へ戻る象徴的な橋。海上を走る爽快なクルージング区間です。</p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=%E8%83%BD%E7%99%BB%E5%B3%B6%E5%A4%A7%E6%A9%8B"
+           class="map-btn" target="_blank">
+            <i class="fa-solid fa-bridge"></i> 能登島大橋マップ
+        </a>
+    </div>
+
+    <div class="nav-info">
+        <i class="fa-solid fa-road"></i> 37km /
+        <i class="fa-solid fa-clock"></i> 50分
+    </div>
+
+    <!-- 18:00 給油 -->
+    <div class="schedule-card gas">
+        <span class="time">18:00 - 18:10</span>
+        <div class="badge-container"><span class="badge">給油（10分）</span></div>
+        <h2>高岡市内 or 氷見IC付近 GS</h2>
+        <p>満タン給油を行って、この日の走行を締めくくります。</p>
+    </div>
+
+    <div class="nav-info">
+        <i class="fa-solid fa-road"></i> 6km /
+        <i class="fa-solid fa-clock"></i> 10分
+    </div>
+
+    <!-- 18:20 ホテル＋夕食候補 -->
+    <div class="schedule-card lunch">
+        <span class="time">18:20 頃</span>
+        <div class="badge-container">
+            <span class="badge" style="background:#34d399; color:#000;">GOAL‼</span>
+        </div>
+        <h2>ホテルアルファーワン高岡駅前</h2>
+        <p>能登半島縦断、本当にお疲れ様でした！ゆっくり休んで明日に備えましょう。</p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%83%AF%E3%83%B3%E9%AB%98%E5%B2%A1%E9%A7%85%E5%89%8D"
+           class="map-btn" style="background:#34d399;" target="_blank">
+            <i class="fa-solid fa-door-open"></i> ホテルチェックイン
+        </a>
+
+        <div class="gourmet-section">
+            <div class="gourmet-title">
+                <i class="fa-solid fa-beer-mug-empty"></i> 高岡駅前周辺のおすすめ居酒屋
+            </div>
+
+            <!-- ① 居酒屋たかまさ -->
+            <div class="gourmet-shop">
+                <div class="shop-name">① 居酒屋たかまさ</div>
+                <p class="shop-desc">地元の食材を使った家庭的な料理が人気。落ち着いた雰囲気でゆっくり飲めるお店。</p>
+                <a href="https://www.google.com/maps/place/%E5%B1%85%E9%85%92%E5%B1%8B%E3%81%9F%E3%81%8B%E3%81%BE%E3%81%95/@36.7437387,137.014518,17z"
+                   class="shop-link" target="_blank">Googleマップ</a>
+            </div>
+
+            <!-- ② 酒蔵 盛盛 -->
+            <div class="gourmet-shop">
+                <div class="shop-name">② 酒蔵 盛盛</div>
+                <p class="shop-desc">日本酒の種類が豊富で、刺身や焼き物など酒に合う料理が揃う人気店。</p>
+                <a href="https://www.google.com/maps/place/%E9%85%92%E8%94%B5+%E7%9B%9B%E7%9B%9B/@36.7455909,137.0149891,17z"
+                   class="shop-link" target="_blank">Googleマップ</a>
+            </div>
+
+            <!-- ③ 魚人（うおんちゅ） -->
+            <div class="gourmet-shop">
+                <div class="shop-name">③ 魚人（うおんちゅ）</div>
+                <p class="shop-desc">新鮮な魚介料理が自慢。刺身・焼き魚・揚げ物まで幅広く楽しめる海鮮居酒屋。</p>
+                <a href="https://www.google.com/maps/place/%E9%AD%9A%E4%BA%BA/@36.743653,137.0127885,17z"
+                   class="shop-link" target="_blank">Googleマップ</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
