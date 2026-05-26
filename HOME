@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSTR 2026</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+    /* ===============================
+       Base
+    =============================== */
+    html, body {
+        background: #020617; /* ほぼ黒 */
+        color: #e5e7eb;
+        font-family: 'Urbanist', 'Noto Sans JP', sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 24px 14px 40px;
+        box-sizing: border-box;
+    }
+
+    /* ===============================
+       Header
+    =============================== */
+    .header {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .header-title {
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        color: #facc15; /* ゴールド */
+        margin: 0 0 6px 0;
+        text-transform: uppercase;
+    }
+    .header-sub {
+        font-size: 13px;
+        color: #9ca3af;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+    }
+    .header-distance {
+        font-size: 13px;
+        color: #e5e7eb;
+        margin: 0;
+    }
+    .header-distance span {
+        color: #facc15;
+        font-weight: 700;
+    }
+
+    /* ===============================
+       Countdown
+    =============================== */
+    .countdown-card {
+        margin-top: 18px;
+        background: radial-gradient(circle at top, rgba(250, 204, 21, 0.18), rgba(15, 23, 42, 0.95));
+        border-radius: 10px;
+        padding: 14px 14px 16px;
+        border: 1px solid rgba(250, 204, 21, 0.35);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .countdown-label {
+        font-size: 11px;
+        color: #e5e7eb;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .countdown-label i {
+        color: #facc15;
+    }
+    .countdown-time {
+        display: flex;
+        justify-content: space-between;
+        gap: 6px;
+    }
+    .countdown-unit {
+        flex: 1;
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 8px;
+        padding: 8px 4px 6px;
+        text-align: center;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+    .countdown-value {
+        font-size: 18px;
+        font-weight: 800;
+        color: #facc15;
+        margin-bottom: 2px;
+    }
+    .countdown-text {
+        font-size: 10px;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+    .countdown-footer {
+        margin-top: 8px;
+        font-size: 11px;
+        color: #9ca3af;
+        text-align: right;
+    }
+    .countdown-footer span {
+        color: #facc15;
+        font-weight: 600;
+    }
+
+    /* ===============================
+       Buttons
+    =============================== */
+    .section-title {
+        margin-top: 22px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #9ca3af;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .section-title i {
+        color: #facc15;
+    }
+
+    .main-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 10px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #facc15, #f97316);
+        color: #111827;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        margin-bottom: 14px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .main-btn i {
+        font-size: 15px;
+    }
+
+    .day-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .day-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 4px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #f9fafb;
+        font-size: 11px;
+        font-weight: 600;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+    }
+    .day-btn span {
+        font-size: 10px;
+        opacity: 0.9;
+        margin-top: 2px;
+    }
+
+    /* DAY colors */
+    .day1 {
+        background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+    .day2 {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    }
+    .day3 {
+        background: linear-gradient(135deg, #a855f7, #7c3aed);
+    }
+
+    /* ===============================
+       Footer
+    =============================== */
+    .footer {
+        margin-top: 26px;
+        font-size: 10px;
+        color: #6b7280;
+        text-align: center;
+    }
+    .footer span {
+        color: #facc15;
+    }
+
+    @media (max-width: 360px) {
+        .header-title { font-size: 26px; }
+        .countdown-value { font-size: 16px; }
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1 class="header-title">SSTR 2026</h1>
+        <p class="header-sub">2026.05.30 SAT – 2026.06.01 MON</p>
+        <p class="header-distance">
+            TOTAL PLANNED DISTANCE: <span>403km</span>
+        </p>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-card">
+        <div class="countdown-label">
+            <i class="fa-solid fa-sun"></i>
+            COUNTDOWN TO DEPARTURE
+        </div>
+        <div class="countdown-time">
+            <div class="countdown-unit">
+                <div class="countdown-value" id="cd-days">--</div>
+                <div class="countdown-text">DAYS</div>
+            </div>
+            <div class="countdown-unit">
+                <div class="countdown-value" id="cd-hours">--</div>
+                <div class="countdown-text">HOURS</div>
+            </div>
+            <div class="countdown-unit">
+                <div class="countdown-value" id="cd-minutes">--</div>
+                <div class="countdown-text">MINUTES</div>
+            </div>
+            <div class="countdown-unit">
+                <div class="countdown-value" id="cd-seconds">--</div>
+                <div class="countdown-text">SECONDS</div>
+            </div>
+        </div>
+        <div class="countdown-footer">
+            <span>2026.05.30 04:28</span> @ TOKYO SUNRISE
+        </div>
+    </div>
+
+    <!-- SSTR My Page -->
+    <div class="section-title">
+        <i class="fa-solid fa-user-astronaut"></i> SSTR MY PAGE
+    </div>
+    <a href="https://www.sstrview.com/sstr2026/mypage/login.php" class="main-btn" target="_blank">
+        <i class="fa-solid fa-id-card"></i>
+        SSTR 2026 MY PAGE
+    </a>
+
+    <!-- Day Links -->
+    <div class="section-title">
+        <i class="fa-solid fa-motorcycle"></i> ROUTE DAYS
+    </div>
+    <div class="day-buttons">
+        <a href="https://komakichi8450.github.io/SSTR-2026/DAY1.html" class="day-btn day1">
+            DAY 1
+            <span>START</span>
+        </a>
+        <a href="https://komakichi8450.github.io/SSTR-2026/DAY2.html" class="day-btn day2">
+            DAY 2
+            <span>CRUISE</span>
+        </a>
+        <a href="https://komakichi8450.github.io/SSTR-2026/DAY3.html" class="day-btn day3">
+            DAY 3
+            <span>GOAL</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        SSTR <span>2026</span> TOURING PLAN
+    </div>
+
+</div>
+
+<script>
+    // カウントダウン：2026-05-30 04:28 JST
+    (function () {
+        const target = new Date('2026-05-30T04:28:00+09:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            let diff = target - now;
+
+            if (diff < 0) diff = 0;
+
+            const sec = Math.floor(diff / 1000);
+            const days = Math.floor(sec / (60 * 60 * 24));
+            const hours = Math.floor((sec % (60 * 60 * 24)) / (60 * 60));
+            const minutes = Math.floor((sec % (60 * 60)) / 60);
+            const seconds = sec % 60;
+
+            document.getElementById('cd-days').textContent = String(days);
+            document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    })();
+</script>
+</body>
+</html>
