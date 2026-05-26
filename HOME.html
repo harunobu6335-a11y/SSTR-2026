@@ -124,23 +124,25 @@
     }
 
     .main-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 12px 10px;
-        border-radius: 999px;
-        background: linear-gradient(90deg, #facc15, #f97316);
-        color: #111827;
-        font-weight: 700;
-        font-size: 14px;
-        text-decoration: none;
-        margin-bottom: 14px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* ← これを追加！ */
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #facc15, #f97316);
+    color: #111827;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
     .main-btn i {
         font-size: 15px;
     }
@@ -221,7 +223,7 @@
         <div class="countdown-main" id="cd-main">--日 --時間 --分 --秒</div>
 
         <div class="countdown-footer">
-            <span>2026.05.30 04:28</span> 東京の日の出
+           東京の日の出 <span>2026.05.30 　　04:28</span> 
         </div>
     </div>
 
